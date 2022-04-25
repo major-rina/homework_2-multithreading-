@@ -10,15 +10,18 @@ import java.io.File;
 import java.util.Map;
 
 import ru.digitalhabbits.homework2.impl.AsyncFileLetterCounter;
+import ru.digitalhabbits.homework2.impl.FileReaderImpl;
+import ru.digitalhabbits.homework2.impl.LetterCountMergerImpl;
+import ru.digitalhabbits.homework2.impl.LetterCounterImpl;
 
 public class E2ETests {
 
     @Test
     void async_file_letter_counting_should_return_predicted_count() {
         var file = getFile("test.txt");
-        var counter = new AsyncFileLetterCounter();
+        var counter = new AsyncFileLetterCounter(new FileReaderImpl(), new LetterCounterImpl(), new LetterCountMergerImpl());
 
-        Map<Character, Long> count = counter.count(file);
+        Map<Character, Long> count = counter.count(file.toPath());
 
         assertThat(count).containsOnly(
                 entry('a', 2697L),

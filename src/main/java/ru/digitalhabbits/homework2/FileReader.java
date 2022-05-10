@@ -1,6 +1,6 @@
 package ru.digitalhabbits.homework2;
 
-import java.nio.file.Path;
+import java.io.File;
 import java.util.stream.Stream;
 
 /**
@@ -8,6 +8,6 @@ import java.util.stream.Stream;
  */
 public interface FileReader {
 
-    Stream<String> readLines(Path filePath);
+    Stream<String> readLines(File file);
 
 }

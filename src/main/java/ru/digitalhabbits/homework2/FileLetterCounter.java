@@ -1,6 +1,6 @@
 package ru.digitalhabbits.homework2;
 
-import java.nio.file.Path;
+import java.io.File;
 import java.util.Map;
 
 /**
@@ -8,6 +8,6 @@ import java.util.Map;
  */
 public interface FileLetterCounter {
 
-    Map<Character, Long> count(Path filePath);
+    Map<Character, Long> count(File file);
 
 }

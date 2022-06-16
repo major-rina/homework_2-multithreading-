@@ -8,6 +8,6 @@ import java.util.Map;
  */
 public interface FileLetterCounter {
 
-    Map<Character, Long> count(File file);
+    Map<Character, Long> count(File input);
 
 }

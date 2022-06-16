@@ -9,8 +9,7 @@ import java.util.stream.Collectors;
 public class LetterCounterImpl implements LetterCounter {
     @Override
     public Map<Character, Long> count(String input) {
-        return input.toLowerCase()
-                .chars()
+        return input.chars()
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
